@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { loginUser } from "../utils";
+
 import "./Login.css";
 
 const Login = ({ newUser }) => {
@@ -8,9 +10,7 @@ const Login = ({ newUser }) => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    console.log(`${username}
-${email}
-${password}`);
+    loginUser(username, email, password, newUser);
   }
 
   return (
