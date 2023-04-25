@@ -18,9 +18,14 @@ const App = () => {
         :
         <h2>Please log in</h2>
       }
-      <Register newUser={setUser}/>
-      <Login newUser={setUser}/>
-      <button id="logout" onClick={handleLogOut}>log out</button>
+      {!user ?
+        <>
+          <Register newUser={setUser}/>
+          <Login newUser={setUser}/>
+        </>
+        :
+        <button id="logout" onClick={handleLogOut}>log out</button>
+      }
     </div>
   );
 }
