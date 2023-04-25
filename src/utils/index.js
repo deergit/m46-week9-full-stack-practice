@@ -14,6 +14,7 @@ export const loginUser = async (username, email, password, newUser) => {
 
     const data = await response.json();
     console.log(data);
+    newUser(data.user.username)
   } catch (error) {
     console.log(error);
   }
