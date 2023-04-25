@@ -5,11 +5,14 @@ const Login = ({ newUser }) => {
   const [username, setUsername] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  
-  const submitHandler = () => {
-    //
+
+  const submitHandler = async (e) => {
+    e.preventDefault();
+    console.log(`${username}
+${email}
+${password}`);
   }
-  
+
   return (
     <div className="login-container">
       <h1>Login below:</h1>
@@ -23,7 +26,7 @@ const Login = ({ newUser }) => {
         </label>
 
         <label>Password:<br />
-          <input onChange={(e) => setPassword(e.target.value)}></input>
+          <input onChange={(e) => setPassword(e.target.value)} type="password"></input>
         </label>
 
         <button type="submit">login</button>
