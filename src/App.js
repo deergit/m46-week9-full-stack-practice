@@ -6,6 +6,11 @@ import Register from "./components/Register";
 const App = () => {
   const [user, setUser] = useState();
 
+  const handleLogOut = (e) => {
+    e.preventDefault();
+    setUser(null);
+  }
+
   return (
     <div className="App">
       {user ?
@@ -15,6 +20,7 @@ const App = () => {
       }
       <Register newUser={setUser}/>
       <Login newUser={setUser}/>
+      <button id="logout" onClick={handleLogOut}>log out</button>
     </div>
   );
 }

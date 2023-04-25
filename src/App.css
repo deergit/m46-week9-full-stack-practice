@@ -5,3 +5,8 @@
   text-align: center;
   align-items: center;
 }
+
+#logout {
+  padding: 5px 20px;
+  margin: 50px;
+}
