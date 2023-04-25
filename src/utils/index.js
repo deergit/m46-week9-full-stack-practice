@@ -1,6 +1,6 @@
 export const loginUser = async (username, email, password, newUser) => {
   try {
-    const response = await fetch("http:/localhost:5001/users/login", {
+    const response = await fetch("http://localhost:5001/users/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
