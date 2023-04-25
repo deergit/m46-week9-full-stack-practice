@@ -1,0 +1,8 @@
+.register-container form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.register-container form label {
+  margin: 10px;
+}
