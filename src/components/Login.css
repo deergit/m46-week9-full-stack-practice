@@ -1,3 +1,7 @@
+.login-container {
+  width: 300px;
+}
+
 .login-container form {
   display: flex;
   flex-flow: column nowrap;
