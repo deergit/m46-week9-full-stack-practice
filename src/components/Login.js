@@ -15,7 +15,7 @@ const Login = ({ newUser }) => {
 
   return (
     <div className="login-container">
-      <h1>Login below:</h1>
+      <h1>or login below:</h1>
       <form onSubmit={submitHandler}>
         <label>Username:<br />
           <input onChange={(e) => setUsername(e.target.value)}></input>

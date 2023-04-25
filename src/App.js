@@ -8,13 +8,13 @@ const App = () => {
 
   return (
     <div className="App">
-      <Register newUser={setUser}/>
-      <Login newUser={setUser}/>
       {user ?
         <h2>Welcome {user}</h2>
         :
         <h2>Please log in</h2>
       }
+      <Register newUser={setUser}/>
+      <Login newUser={setUser}/>
     </div>
   );
 }
