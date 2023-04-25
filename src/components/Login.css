@@ -1,0 +1,8 @@
+.login-container form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.login-container form label {
+  margin: 10px;
+}
