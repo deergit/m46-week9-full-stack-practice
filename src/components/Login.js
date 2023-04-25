@@ -10,7 +10,7 @@ const Login = ({ newUser }) => {
 
   const submitHandler = async (e) => {
     e.preventDefault();
-    loginUser(username, email, password, newUser);
+    await loginUser(username, email, password, newUser);
   }
 
   return (
