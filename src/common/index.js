@@ -1,7 +1,7 @@
 export const writeCookie = (key, value, days = 30) => {
   let date = new Date();
 
-  date.setDate(date.getDate() + days)
+  date.setDate(date.getDate() + days);
 
   let cookie = document.cookie = `${key}=${value}; expires=${date.toGMTString()}; path=/; samesite=Strict`;
 
@@ -21,4 +21,8 @@ export const getCookie = (cookieName) => {
 
     return false;
   }
+}
+
+export const deleteCookie = (cookieName) => {
+  writeCookie(cookieName, "", -1);
 }

@@ -3,19 +3,27 @@ import { useState, useEffect } from "react";
 import "./App.css";
 import Login from "./components/Login";
 import Register from "./components/Register";
-import { getCookie } from "./common";
+
+import { deleteCookie, getCookie } from "./common";
+import { authCheck } from "./utils";
 
 const App = () => {
   const [user, setUser] = useState();
   
   useEffect(() => {
-    let cookie = getCookie("jwt_token");
-    console.log(cookie);
+    let jwt = getCookie("jwt_token");
+    if (jwt) { loginWithToken(jwt) };
   }, []);
+
+  const loginWithToken = async (jwt) => {
+    const user = await authCheck(jwt);
+    setUser(user);
+  }
 
   const handleLogOut = (e) => {
     e.preventDefault();
     setUser(null);
+    deleteCookie("jwt_token");
   }
 
   return (
