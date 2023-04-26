@@ -1,10 +1,17 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+
 import "./App.css";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import { getCookie } from "./common";
 
 const App = () => {
   const [user, setUser] = useState();
+  
+  useEffect(() => {
+    let cookie = getCookie("jwt_token");
+    console.log(cookie);
+  }, []);
 
   const handleLogOut = (e) => {
     e.preventDefault();
