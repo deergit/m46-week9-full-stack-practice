@@ -8,3 +8,14 @@ export const writeCookie = (key, value, days = 30) => {
   return cookie;
 }
 
+export const getCookie = (cookieName) => {
+  const re = new RegExp(`(?<=${cookieName}=)[^;]*`);
+
+  try {
+    let cookie = document.cookie.match(re)[0];
+    return cookie;
+  } catch (error) {
+    console.log("cookie not found");
+    return false;
+  }
+}
